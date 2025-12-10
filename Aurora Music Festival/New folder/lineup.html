@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Line-up - Aurora Music Festival 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">🎵 Aurora Music Festival</div>
+        
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lineup.html" class="btn">Line-up</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="merch.html">Merchandise</a></li>
+        </ul>
+    </nav>
+
+    <section class="lineup-section">
+        <h1 class="art" align="center">Artist Line-up</h1>
+        <div class="lineup-container">
+            <div class="day-lineup">
+                <h2>Day 1</h2>
+                <ul class="artist-list">
+                    <li><a href="#" onclick="showArtist('rico-blanco', this); return false;">Rico Blanco</a></li>
+                    <li><a href="#" onclick="showArtist('bini', this); return false;">BINI</a></li>
+                    <li><a href="#" onclick="showArtist('moira-dela-torre', this); return false;">Moira Dela Torre</a>
+                    </li>
+                    <li><a href="#" onclick="showArtist('tj-monterde', this); return false;">TJ Monterde</a></li>
+                    <li><a href="#" onclick="showArtist('arthur-nery', this); return false;">Arthur Nery</a></li>
+                    <li><a href="#" onclick="showArtist('bgyo', this); return false;">BGYO</a></li>
+                </ul>
+            </div>
+            <div class="day-lineup">
+                <h2>Day 2</h2>
+                <ul class="artist-list">
+                    <li><a href="#" onclick="showArtist('bini', this); return false;">BINI</a></li>
+                    <li><a href="#" onclick="showArtist('cup-of-joe', this); return false;">Cup of Joe</a></li>
+                    <li><a href="#" onclick="showArtist('maki', this); return false;">Maki</a></li>
+                    <li><a href="#" onclick="showArtist('dionela', this); return false;">Dionela</a></li>
+                    <li><a href="#" onclick="showArtist('over-october', this); return false;">Over October</a></li>
+                    <li><a href="#" onclick="showArtist('flow-g', this); return false;">Flow G</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="artist-info">
+        <div class="artist-detail">
+            <a href="#" class="back-link" onclick="hideArtist(); return false;">← Back to Line-up</a>
+            <div id="artist-content"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aurora Music Festival | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const artistData = {
+            'rico-blanco': {
+                name: 'Rico Blanco',
+                image: '/source/rico-blanco.jpg',
+                description: '<p>He is a renowned Filipino singer, songwriter, multi-instrumentalist, record producer, actor, endorser, and entrepreneur. He was one of the founding members of the Filipino rock band Rivermaya and served as the chief songwriter, vocalist, guitarist, and keyboardist from 1994 until 2007. He is credited with writing many of Rivermaya\'s most iconic and chart-topping songs, such as "Awit ng Kabataan," "Ulan," "214," "Kisapmata," "Himala," "Hinahanap-hanap Kita," and "You\'ll Be Safe Here."</p><p>Since 2008, he has established a successful career as a solo artist, releasing multiple albums like Your Universe, Galactik Fiestamatik, and Dating Gawi, with solo hits including "Yugto," "Your Universe," "Antukin," and "Wag Mong Aminin." He is also an accomplished record producer, having produced albums for other artists including Slapshock and Sugarfree, and produced Rivermaya\'s Free album, winning him an NU Rock award for Producer of the year.</p><p>He is considered one of the most powerful and influential characters in the Filipino music industry, known for his ability to write and produce hit songs with an ever-evolving sound that blends genres like alternative rock, pop rock, folk, and electronic. His composing work extends beyond his own albums, including theme songs for national endeavors like the United Nations MDG theme "Tayo Tayo Rin" and the Philippine Department of Tourism theme "Biyahe Tayo."</p>'
+            },
+            'bini': {
+                name: 'BINI',
+                image: '/source/BINI1.jpg',
+                description: '<p>BINI (stylized in all caps) is an eight-member Filipino girl group that has become a prominent and historic figure in the modern Pinoy Pop (P-pop) music scene. The group, which debuted in 2021, is composed of Jhoanna (the leader), Aiah, Colet, Maloi, Gwen, Stacey, Mikha, and Sheena. Their name is derived from the Filipino word binibini.</p><p>They are at the forefront of the P-pop revolution, helping to define and popularize the genre globally. They made history as the first Filipino act to win the "Best Asia Act" at the MTV Europe Music Awards (EMA) in 2024 and are slated to be the first P-pop act to perform at the Coachella music festival in 2026.</p><p>They are widely regarded as a significant cultural force, not only for their music and performances but also for reshaping the perception of Filipino talent on both the local and international stage.</p>'
+            },
+            'moira-dela-torre': {
+                name: 'Moira Dela Torre',
+                image: '/source/moira-dela-torre.jpg',
+                description: '<p>She is a prominent Filipino singer and songwriter, often referred to as the "OPM Queen" (Original Pilipino Music Queen). She rose to fame in the Filipino music industry with her debut album, Malaya (2018), which was awarded an eight-time platinum certification and was the best-selling album of 2018 in the Philippines. She has also been the No. 1 most streamed artist on Spotify in the Philippines multiple times, establishing herself as a multi-platinum recording artist.</p><p>She is lauded for her "heartfelt" and "angelic voice," which is described as "airy" and "soothing." Her distinctive "melancholic" singing style has become her signature sound in her pop and soul records, making her one of the most popular tunes in the mainstream. Lea Salonga called her "The Voice of the New Generation." She is known for her original songs that resonate deeply with Filipino listeners, earning her recognition as a powerful storyteller. Key hit songs she has interpreted or written include "Titibo-Tibo" (Grand Winner of the 2017 Himig Handog music competition), "Malaya," "Tagpuan," "Paubaya," and popular covers like "Torete" and "Sundo."</p><p>Her music is frequently featured as theme songs for television shows and films, such as "Malaya" (for Camp Sawi), "Torete" (for Love You to the Stars and Back), and "Kumpas" (for 2 Good 2 Be True). She was a contestant on The Voice of the Philippines (2013) and later served as one of the judges in Idol Philippines. She has also collaborated with international artists like Danish singer Maximillian and Pink Sweat$.</p><p>Moira Dela Torre is a powerful storyteller who uses music to amplify Original Pilipino Music (OPM), making her one of the most influential voices in the contemporary Filipino music scene.</p>'
+            },
+            'tj-monterde': {
+                name: 'TJ Monterde',
+                image: '/source/tj-monterde.avif',
+                description: '<p>Titus John Dabuan Monterde is a Filipino singer-songwriter known for his heartfelt ballads and influential role in contemporary Original Pilipino Music (OPM). He is a storyteller who writes his own music, often drawing inspiration from personal experiences to create songs that resonate deeply with themes of love and longing.</p><p>His music primarily falls under the Pop and R&B genres, and he is a graduate of Development Communication from Xavier University – Ateneo de Cagayan.</p><p>He is the singer and songwriter behind numerous popular and award-winning OPM hits that have become staples in Filipino pop culture. "Ikaw at Ako" (2012) became his debut and signature hit. "Palagi" (2023) is a major breakthrough, topping the Billboard Top Philippine Songs and Philippines Hot 100 year-end charts of 2024. It also became the soundtrack for the film Hello, Love, Again. He wrote "Palagi" for his wife, KZ Tandingan.</p>'
+            },
+            'arthur-nery': {
+                name: 'Arthur Nery',
+                image: '/source/arthur-nery.jpg',
+                description: '<p>He is a contemporary Filipino singer and songwriter who has become a leading figure in the modern Original Pilipino Music (OPM) scene, particularly within the R&B and soul genres. He is known for his seductive and soulful voice.</p><p>He is responsible for some of the most streamed and well-known OPM songs of the 2020s. His signature hit is "Pagsamo," released in 2021, which became a smash hit and broke streaming records on Spotify Philippines. Other popular tracks include "Higa," "Binhi," "Isa Lang," and "Take All The Love."</p><p>He began his music career after working as a call center agent and an online English teacher, and he signed a record deal in 2019 under O/C Records (now managed by Viva Records).</p>'
+            },
+            'bgyo': {
+                name: 'BGYO',
+                image: '/source/bgyo.jpg',
+                description: '<p>BGYO is a five-member Filipino boy band that is a leading force in the contemporary Pinoy Pop (P-pop) movement. The group, formed through ABS-CBN\'s Star Hunt Academy (SHA), is composed of members Akira, Gelo (the leader), JL, Mikki, and Nate.</p><p>Their song "The Baddest" brought them to the number one spot on the Billboard Next Big Sound chart and the Pandora Predictions Chart in 2021, making them the first Filipino act to do so on the former.</p><p>Their debut album, The Light, topped the iTunes Philippines Top 100 albums chart for a record 12 consecutive days and charted in multiple other countries, including Canada, Mexico, and Australia. Their second album, Be Us, also topped iTunes Album charts in the Philippines and several other countries.</p><p>BGYO\'s impact lies in their commitment to being "Originally Filipino" and using their blend of music and performance to elevate Filipino pop music to a world-class standard.</p>'
+            },
+            'cup-of-joe': {
+                name: 'Cup of Joe',
+                image: '/source/cup-of-joe.jpg',
+                description: '<p>Cup of Joe is a Filipino pop rock band originally formed in Baguio, Philippines, in November 2018. The band\'s current lineup consists of five members: Gian Bernardino (Lead Vocals), Raphaell Ridao (Lead Vocals), Gabriel Fernandez (Lead Guitar), CJ Fernandez (Rhythm Guitar), and Xen Gareza (Keyboards).</p><p>They formed while they were in senior high school at Saint Louis University Laboratory High School. The name "Cup of Joe," a slang term for coffee, is meant to reflect their relaxed music style and connection to Baguio\'s cool, laid-back atmosphere. "Joe" symbolizes an ordinary person, reflecting their identity as students eager to share their music.</p><p>Cup of Joe\'s contribution lies in their ability to translate genuine, heartfelt emotions into catchy, modern OPM rock anthems that have captured a vast audience and achieved unprecedented international and local chart success for a Filipino band.</p>'
+            },
+            'maki': {
+                name: 'Maki',
+                image: '/source/maki.jpg',
+                description: '<p>Ralph William Datoon is a Filipino singer and songwriter from Quezon City, Philippines. Born on November 27, 1999, he is currently signed to Tarsier Records and is a graduate of communications from New Era University. His music falls primarily under the Alternative R&B and pop genres.</p><p>Maki is considered one of the fastest-rising stars in the OPM scene (Original Pilipino Music) and a breakthrough artist of the 2020s, known for his ability to produce viral hits with a distinct, easy, and melodic R&B/pop style.</p><p>His songs have achieved massive success on streaming platforms, making a significant mark on both local and global charts. "Dilaw" (2024) is his biggest hit, becoming the first number-one track on Billboard Philippines\' relaunched Philippines Hot 100 chart. "Dilaw" is also historic, as it became the third Filipino song to chart on the global Spotify chart and the fastest OPM song to reach 100 million streams (achieving the milestone in 88 days).</p><p>Maki\'s contribution is rooted in his sincerity and ability to connect with listeners through his honest R&B songwriting, establishing him as a commercial and critical success in the current OPM landscape.</p>'
+            },
+            'dionela': {
+                name: 'Dionela',
+                image: '/source/dionela.jpg',
+                description: '<p>Timothy Dionela is a Filipino singer-songwriter and musician from Guiguinto, Bulacan. He has achieved significant commercial success with his singles, becoming a major player in contemporary OPM. His 2024 singles "Sining" (featuring Jay R) and "Marilag" both reached number one on the Billboard Philippines Hot 100 chart. "Marilag" also became the first single to top the new International Federation of the Phonographic Industry Official Philippines Chart in January 2025.</p><p>His music is generally categorized as R&B and alternative R&B. He has received multiple awards, including Best Performance by a Solo Artist for "Marilag" at the Awit Awards 2025, Best R&B Recording for "Oksihina," "Marilag," and "Sining" (with Jay R) at the Awit Awards 2024 and 2025, and New Male Recording Artist of the Year at the PMPC Star Awards for Music in 2024.</p><p>He started singing at the age of three, and both of his parents are music teachers. He plays the vocals and guitar.</p>'
+            },
+            'over-october': {
+                name: 'Over October',
+                image: '/source/over-october.avif',
+                description: '<p>Over October is a Filipino indie/alternative rock band based in Manila, Philippines, formed in October 2014. The group is composed of Josh Buizon, Joshua Caleb Lua, Joric Canlas, and Janessa Geronimo.</p><p>Their music is generally classified as Indie Pop, Alternative Rock, and Pop Rock. Their sound is described as nostalgic, sincere, and full of soul, with musical influences cited as John Mayer, Jason Mraz, and Coldplay. The band aims to express themselves through music rather than strictly defining a single sound.</p><p>They have a growing discography, including EPs: Free (2016) and Maybe Today, Maybe Tomorrow (2021), and Albums: Press Play (2019) and Make Believe (2024). The album Make Believe was inspired by imagined scenarios. Their single "Ikot" (2024) became a major hit, gaining significant exposure and even making it onto the Billboard Philippines Hot 100 chart. This song currently has over 163 million streams.</p>'
+            },
+            'flow-g': {
+                name: 'Flow G',
+                image: '/source/flow-g.jpg',
+                description: '<p>Archie Basilio dela Cruz (born on August 15, 1996) is a Filipino rapper, singer, and songwriter from Alabang, Muntinlupa. He is a major figure in the Filipino hip-hop and trap music genres.</p><p>He rose to prominence as a member of the Filipino hip-hop collective Ex Battalion, but has also built a highly successful solo career. He is known for numerous viral and chart-topping solo releases: "Rapstar" (2022) with over 171 million views, which earned him a Wish Hip-hop Song of the Year award in 2024, "Praning" (2022), "Nandyan Agad Ako" (2018) from the Ex Battalion EP, and "Araw-Araw Love" (2020) which was one of the most viewed music videos on YouTube PH in December 2020.</p><p>He has received multiple major industry awards, including Wish Artist of the Year and Spotify Artist of the Year at the 9th Wish Music Awards in 2024, and Rap Artist of the Year at the PMPC Star Awards for Music in 2024 for "Rapstar."</p><p>His music often carries a message for Filipinos and tells an inspiring "nothing to something story," with tracks like "High Score" prompting listeners to work hard.</p>'
+            }
+        };
+
+        function showArtist(artistId, eventElement) {
+            const artist = artistData[artistId];
+            if (!artist) return;
+
+            const artistInfo = document.getElementById('artist-info');
+            const artistContent = document.getElementById('artist-content');
+
+            // Remove active class from all links
+            document.querySelectorAll('.artist-list a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to clicked link if eventElement is provided
+            if (eventElement) {
+                eventElement.classList.add('active');
+            }
+
+            artistContent.innerHTML = `
+                <h2>${artist.name}</h2>
+                <img src="${artist.image}" alt="${artist.name}" />
+                ${artist.description}
+            `;
+
+            artistInfo.classList.add('active');
+            artistInfo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function hideArtist() {
+            const artistInfo = document.getElementById('artist-info');
+            artistInfo.classList.remove('active');
+            document.querySelector('.lineup-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Remove active class from all links
+            document.querySelectorAll('.artist-list a').forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+
+        // Check URL parameter on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const artistId = urlParams.get('artist');
+            if (artistId && artistData[artistId]) {
+                // Small delay to ensure DOM is ready
+                setTimeout(() => {
+                    showArtist(artistId, null);
+                    // Find and highlight the corresponding link
+                    document.querySelectorAll('.artist-list a').forEach(link => {
+                        if (link.textContent.trim() === artistData[artistId].name) {
+                            link.classList.add('active');
+                        }
+                    });
+                }, 100);
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

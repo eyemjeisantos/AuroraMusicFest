@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Music Festival Ticket Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-image"></div>
+
+    <div class="payment-container">
+        <h2 class="pay">Secure Ticket Payment</h2>
+
+        <form id="ticket-form">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName" required placeholder="Juan Dela Cruz">
+            </div>
+            <div class="form-group">
+                <label for="mobile-number">Mobile Number</label>
+                <input type="tel" id="mobile-number" name="mobileNumber" required placeholder="09XX-XXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+            </div>
+
+            <div class="payment-methods">
+                <h3>Choose Payment Method</h3>
+
+                <button type="button" class="gateway-button gcash" onclick="toggleAttach()">
+                    <img src="/source/gcash-logo.png" class="logo" alt="Gcash Logo">
+                    Pay with Gcash
+                </button>
+                <div id="attachSection">
+                    <input type="file">
+                </div>
+
+                <script>
+                    function toggleAttach() {
+                        const section = document.getElementById("attachSection");
+
+                        if (section.classList.contains("open")) {
+                            // Close
+                            section.classList.remove("open");
+                            section.style.maxHeight = "0";
+                        } else {
+                            // Open
+                            section.classList.add("open");
+                            section.style.maxHeight = section.scrollHeight + "px";
+                        }
+                    }
+                </script>
+
+
+                <button type="button" class="gateway-button maya" onclick="toggleAttach()">
+                    <img src="/source/maya-logo.png" class="logo" alt="Maya Logo">
+                    Pay with Maya
+                </button>
+                <div id="attachSections">
+                    <input type="file">
+                </div>
+
+                <script>
+                    function toggleAttach() {
+                        const section = document.getElementById("attachSections");
+
+                        if (section.classList.contains("open")) {
+                            // Close
+                            section.classList.remove("open");
+                            section.style.maxHeight = "0";
+                        } else {
+                            // Open
+                            section.classList.add("open");
+                            section.style.maxHeight = section.scrollHeight + "px";
+                        }
+                    }
+                </script>
+            </div>
+        </form>
+
+        <a href="confirm.html" class="submit" onclick="saveFormData()">Submit</a>
+    </div>
+
+    <script>
+        function saveFormData() {
+            const form = document.getElementById('ticket-form');
+            if (!form.checkValidity()) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const formData = {
+                fullName: document.getElementById('full-name').value,
+                mobileNumber: document.getElementById('mobile-number').value,
+                email: document.getElementById('email').value,
+                timestamp: new Date().toISOString()
+            };
+
+            localStorage.setItem('ticketData', JSON.stringify(formData));
+        }
+    </script>
+
+</body>
+
+</html>
